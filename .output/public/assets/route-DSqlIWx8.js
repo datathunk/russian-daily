@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-dev-runtime-CU9os1S-.js";import{v as t}from"./index-DwuW3k4j.js";var n=e(),r=`/Users/datathunk/dev/AI/russian-daily/src/routes/_authenticated/route.tsx?tsr-split=component`,i=()=>(0,n.jsxDEV)(t,{},void 0,!1,{fileName:r,lineNumber:4,columnNumber:30},void 0);export{i as component};

@@ -12,5 +12,21 @@ export default defineConfig({
   },
   vite: {
     server: { port: 3030, strictPort: true },
+    define: {
+      "process.env.NODE_ENV": JSON.stringify("production"),
+    },
+  },
+  nitro: {
+    preset: "cloudflare-pages",
+    replace: {
+      "process.env.NODE_ENV": JSON.stringify("production"),
+    },
+    alias: {
+      "react/jsx-dev-runtime": "/Users/datathunk/dev/AI/russian-daily/src/shims/jsx-dev-runtime.ts",
+    },
+    externals: {
+      inline: [],
+      external: ["bun:sqlite", "bun:ffi"],
+    },
   },
 });

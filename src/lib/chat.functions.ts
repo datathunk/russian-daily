@@ -12,18 +12,22 @@ import { z } from "zod";
 const DATA_DIR = process.env.DB_PATH ?? "data";
 
 function readJson(file: string): any[] {
-  const p = join(DATA_DIR, file);
-  if (!existsSync(p)) return [];
   try {
+    const p = join(DATA_DIR, file);
+    if (!existsSync(p)) return [];
     return JSON.parse(readFileSync(p, "utf-8"));
   } catch {
-    return [];
+    return []; // no-op on CF Workers (no filesystem)
   }
 }
 
 function writeJson(file: string, data: any[]) {
-  mkdirSync(DATA_DIR, { recursive: true });
-  writeFileSync(join(DATA_DIR, file), JSON.stringify(data, null, 2));
+  try {
+    mkdirSync(DATA_DIR, { recursive: true });
+    writeFileSync(join(DATA_DIR, file), JSON.stringify(data, null, 2));
+  } catch {
+    // no-op on CF Workers (no filesystem)
+  }
 }
 
 // ---------------------------------------------------------------------------

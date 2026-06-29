@@ -282,6 +282,5 @@ export const localDb = {
   },
 };
 
-// Re-export the raw db instance for direct use if needed
-export { db } from "./db.init";
+// Note: db.init.ts (bun:sqlite) is intentionally NOT re-exported here — CF Workers don't support it.
 

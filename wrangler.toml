@@ -1,0 +1,7 @@
+name = "learnru"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+[vars]
+# ANTHROPIC_API_KEY is set as a secret via: wrangler pages secret put ANTHROPIC_API_KEY
+# UNREAL_SPEECH_API_KEY is set as a secret via: wrangler pages secret put UNREAL_SPEECH_API_KEY

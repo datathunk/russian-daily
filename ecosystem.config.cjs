@@ -2,8 +2,9 @@ module.exports = {
   apps: [
     {
       name: 'russian-daily',
-      script: 'bun',
+      script: '/Users/datathunk/.bun/bin/bun',
       args: 'run dev',
+      interpreter: 'none',
       cwd: '/Users/datathunk/dev/AI/russian-daily',
       env: {
         PORT: 3030,
